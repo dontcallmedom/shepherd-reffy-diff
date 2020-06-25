@@ -1,0 +1,11 @@
+{
+  "name": "shepherd-reffy-diff",
+  "author": "Dominique Hazael-Massieux <dom@w3.org> (http://www.w3.org/People/Dom/)",
+  "dependencies": {
+    "reffy-reports": "git+https://github.com/tidoust/reffy-reports.git",
+    "respec-xref-route": "^7.1.0"
+  },
+  "scripts": {
+    "install": "mkdir xref && DATA_DIR=./ node node_modules/respec-xref-route/scraper.js"
+  }
+}
