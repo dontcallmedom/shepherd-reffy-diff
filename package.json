@@ -2,10 +2,12 @@
   "name": "shepherd-reffy-diff",
   "author": "Dominique Hazael-Massieux <dom@w3.org> (http://www.w3.org/People/Dom/)",
   "dependencies": {
+    "json-object-diff": "git+https://github.com/dontcallmedom/jsodiff.git",
     "reffy-reports": "git+https://github.com/tidoust/reffy-reports.git",
     "respec-xref-route": "^7.1.0"
   },
   "scripts": {
-    "install": "mkdir xref && DATA_DIR=./ node node_modules/respec-xref-route/scraper.js"
+    "install": "mkdir xref && DATA_DIR=./ node node_modules/respec-xref-route/scraper.js",
+    "diff": "node list-shepherd-dfns.js && node list-reffy-dfns.js && node node_modules/json-object-diff/jsodiff.js -k id -i text  shepherd-dfns.json reffy-dfns.json"
   }
 }
